@@ -18,9 +18,11 @@ This project consists of **five main modules**:
 
 Use the **Yahoo! Music KDDCup 2011 (Track 1) dataset**, which has the following format:
 
-First line for a user is formatted as: <UsedId>|<#UserRatings>
+The dataset comprises 262,810,175 ratings of 624,961 music items by 1,000,990 users collected during **1999-2010**.
+
+First line for a user is formatted as:  <UsedId>|<UserRatings>.
 Each of the next <#UserRatings> lines describes a single rating by <UsedId>, sorted in chronological order.
-Rating line format is: <ItemId>\t<Score>\t<Time>
+Rating line format is:  <ItemId>|<Score>|<RatingTime>|<TimeStamp>.
 The scores are integers lying between 0 and 100.
 
 ```
@@ -61,8 +63,6 @@ df_filtered.show(5)
 - Data Cleaning Steps:
   - **Normalize ratings** (0-100 → 0-1)
   - **Convert time format** to Unix timestamps
-  - **Remove duplicates** to ensure unique records
-  - **Filter out users with fewer than 5 interactions** to mitigate the cold-start problem
 
 ------
 
